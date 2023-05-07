@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rap/components/app_bar/app_bar_widget.dart';
 import 'package:rap/components/drawer/drawer.dart';
 import 'package:rap/components/panel_center/panel_center_page.dart';
 import 'package:rap/components/panel_left/panel_left_page.dart';
@@ -22,11 +23,7 @@ class _WidgetTreeState extends State<WidgetTree> {
             child: (ResponsiveLayout.isTiny(context) ||
                     ResponsiveLayout.isTinyHeight(context))
                 ? const SizedBox()
-                : AppBar(
-                    title: const Text("Widget Tree"),
-                    automaticallyImplyLeading:
-                        ResponsiveLayout.isComputer(context) ? false : true,
-                  )),
+                : const AppBarWidget()),
         body: ResponsiveLayout(
           tiny: const SizedBox(),
           phone: const PanelLeftPage(),
